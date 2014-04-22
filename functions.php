@@ -77,4 +77,9 @@ add_action( 'widgets_init', 'register_widgets' );
 	Custom functions
 \******************************************************************************/
 
-include 'metabox-DEMO-template.php';
+/**
+* Plugin 'Meta Box' van Rilwis
+*
+* URL: http://wordpress.org/plugins/meta-box/
+*/
+include 'metaboxes/metabox-DEMO-template.php';
