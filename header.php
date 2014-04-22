@@ -25,11 +25,11 @@
 				<div class="layout">
 					<nav role="navigation">
 						<ul>
-							<li><a href="<?php home_url(); ?>/over-ons"><span>Over ons</span><span class="sub">Onze visie</span></a></li>
-							<li><a href="<?php home_url(); ?>/realisaties"><span>Realisaties</span><span class="sub">Afbeeldingen</span></a></li>
+							<li><a href="<?php home_url(); ?>/"><span>Over ons</span><span class="sub">Onze visie</span></a></li>
+							<li><a href="<?php home_url(); ?>/"><span>Realisaties</span><span class="sub">Afbeeldingen</span></a></li>
 							<li class="logo"><a href="<?php home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/gevaco_logo.png" alt="Logo Gevaco - bouwbedrijf"></a></li>
-							<li><a href="<?php home_url(); ?>/vacature"><span>Nieuws</span><span class="sub">Vacatures</span></a></li>
-							<li><a href="<?php home_url(); ?>/contact"><span>Bedrijf</span><span class="sub">Info - contact</span></a></li>
+							<li><a href="<?php home_url(); ?>/"><span>Nieuws</span><span class="sub">Vacatures</span></a></li>
+							<li><a href="<?php home_url(); ?>/"><span>Bedrijf</span><span class="sub">Info - contact</span></a></li>
 						</ul>
 					</nav>
 				</div>
