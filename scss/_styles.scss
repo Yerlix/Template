@@ -1,7 +1,7 @@
 /* ==== Frame ==== */
 /* ==================================== */
-body { background-color:#fff; background-position:center; background-size:cover; background-attachment:fixed; background-repeat:no-repeat; }
-.layout { /*background:rgba(100,0,0,0.5);*/ overflow:hidden; min-width:$page-min-width; max-width:$page-max-width; margin:0 auto; }
+body {  }
+.layout {  }
 
 @media screen and (min-width:$box-max-width+1) {
 	// body { background:none; }
@@ -49,13 +49,11 @@ hr { height:1px; border:0; background-color:#fff; background-color:rgba(255,255,
 /* ==================================== */
 // modules
 @import "modules/header";
-@import "modules/content";
 @import "modules/forms";
-@import "modules/sidebar";
 // pagespecific
-@import "pagespecific/contact";
+@import "pagespecific/demo";
 // plugins
-@import "plugins/picker";
+@import "plugins/demo";
 
 /* ==== Selections ==== */
 /* ==================================== */

@@ -1,10 +1,11 @@
 require.config({
-	baseUrl: "/wp-content/themes/gevaco/js",
+	baseUrl: "/wp-content/themes/DEMO/js",
 	paths: {
 		jquery: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min"
 	},
 	shim: {
-		"vendor/Picker/jquery.fs.picker": ["jquery"]
+		// "vendor/Picker/jquery.fs.picker": ["jquery"],
+		"vendor/domready/ready.min": ["jquery"]
 	}
 });
 
@@ -31,13 +32,14 @@ require.config({
     }
 }());
 
-require(['jquery', 'vendor/Picker/jquery.fs.picker'], function($) {
+// require(['jquery', 'vendor/Picker/jquery.fs.picker'], 
+(function($) {
 	"use strict";
 
-	var gevaco = {
+	var DEMO = {
 		init: function() {
-			gevaco.focusInput();
-			gevaco.dressPickers();
+			DEMO.focusInput();
+			DEMO.dressPickers();
 		},
 
 		focusInput: function() {
@@ -53,9 +55,10 @@ require(['jquery', 'vendor/Picker/jquery.fs.picker'], function($) {
 		}
 	};
 
-	//init
-	$(window).load(function ()
-	{
-		$(gevaco.init);
+	// Trigger actions when DOM is ready
+	require(['vendor/domready/ready.min'], function (domReady) {
+	  domReady(function () {
+		$(DEMO.init);
+	  });
 	});
 });

@@ -5,11 +5,11 @@ $legacy-support-for-ie7: false !default;
 $image-url: 'test';
 
 
-/* ==== Picker ==== */
+/* ==== demo ==== */
 /* ==================================== */
-.picker.picker-checkbox.checked .picker-flag  {
-	background-image:inline-image('../images/check.png');
-	// @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-	// 	*background-image:url('../img/trans.png');
-	// }
-}
+// .demo {
+// 	background-image:inline-image('../images/demo.png');
+// 	// @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+// 	// 	*background-image:url('../images/demo.png');
+// 	// }
+// }

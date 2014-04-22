@@ -17,7 +17,7 @@ Template Name: Home
 	<section class="content">
 		<div class="content-wrapper">
 			<div class="side-img" itemprop="primaryImageOfPage" itemscope itemtype="http://schema.org/ImageObject">
-				<img src="images/villa_gevaco_1.JPG" alt="Villa Gevaco" itemprop="Villa Gevaco">
+				<?php get_sidebar(); ?>
 			</div>
 			<article itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
 				<header>

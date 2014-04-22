@@ -22,7 +22,7 @@ function theme_enqueue_scripts(){
 
 	wp_enqueue_style('global', get_bloginfo('template_url') . '/css/global.css');
 
-	// wp_register_script('livereload', 'http://gevaco:35729/livereload.js?snipver=1', null, false, true);
+	// wp_register_script('livereload', 'http://DEMO:35729/livereload.js?snipver=1', null, false, true);
 	// wp_enqueue_script('livereload');
 }
 
@@ -77,4 +77,4 @@ add_action( 'widgets_init', 'register_widgets' );
 	Custom functions
 \******************************************************************************/
 
-
+include 'metabox-DEMO-template.php';

@@ -17,20 +17,21 @@
 		</noscript>
 
     </head>
-    <body <?php body_class() ?> itemscope itemtype="http://schema.org/WebPage" style="background-image:url(images/villa_gevaco_2.JPG);">
+    <body <?php body_class() ?> itemscope itemtype="http://schema.org/WebPage" style="background-image:url(images/DEMO.jpg);">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-			<header role="banner" class="main-header">
-				<div class="layout">
-					<nav role="navigation">
-						<ul>
-							<li><a href="<?php home_url(); ?>/"><span>Over ons</span><span class="sub">Onze visie</span></a></li>
-							<li><a href="<?php home_url(); ?>/"><span>Realisaties</span><span class="sub">Afbeeldingen</span></a></li>
-							<li class="logo"><a href="<?php home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/gevaco_logo.png" alt="Logo Gevaco - bouwbedrijf"></a></li>
-							<li><a href="<?php home_url(); ?>/"><span>Nieuws</span><span class="sub">Vacatures</span></a></li>
-							<li><a href="<?php home_url(); ?>/"><span>Bedrijf</span><span class="sub">Info - contact</span></a></li>
-						</ul>
-					</nav>
-				</div>
+
+			<!-- Standard Wordpress Header -->
+			<header id="page-header">
+				<h1 id="page-logo">
+					<span>
+						<?php bloginfo('name') ?>
+					</span>
+				</h1>
+				<?php wp_nav_menu(array(
+					'theme_location' => 'main-nav',
+					'container'      => 'nav',
+					'container_id'   => 'primary-nav'
+				)) ?>
 			</header>

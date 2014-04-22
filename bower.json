@@ -1,8 +1,11 @@
 {
-  "name": "Gevaco",
+  "name": "Demo",
   "private": true,
   "dependencies": {
     "jquery": "~1.11.0",
-    "requirejs": "~2.1.5"
+    "requirejs": "~2.1.5",
+    "html5shiv": "~3.7.1",
+    "Picker": "~3.0.11",
+    "domready": "~1.0.4"
   }
 }
