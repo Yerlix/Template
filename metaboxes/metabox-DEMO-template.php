@@ -13,7 +13,7 @@ function DEMO_register_meta_boxes()
 		return;
 
 	// Register meta boxes only for some posts/pages
-	if ( ! contact_maybe_include() )
+	if ( ! DEMO_maybe_include() )
 		return;
 
 	foreach ( $meta_boxes as $meta_box )

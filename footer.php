@@ -1,7 +1,7 @@
 
-		<footer id="page-footer">
+		<!-- <footer id="page-footer">
 			<p class="footer-copyright">Copyright &copy; <?= date('Y') ?> <?php bloginfo('name') ?></p>
-		</footer>
+		</footer> -->
 		<?php wp_footer() ?>
 	</body>
 </html>
