@@ -26,6 +26,17 @@ function theme_enqueue_scripts(){
 	// wp_enqueue_script('livereload');
 }
 
+/**
+ * Check if in production
+ */
+function is_production(){
+  if(ENVIRONMENT == 'production'){
+      return true;
+  }else{
+      return false;
+  }
+}
+
 //Add Featured Image Support
 add_theme_support('post-thumbnails');
 
