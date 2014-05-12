@@ -1,11 +1,10 @@
 require.config({
-	baseUrl: "/wp-content/themes/DEMO/js",
+	baseUrl : '/wp-content/themes/THEME/js',
 	paths: {
-		jquery: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min"
+		jquery: "../bower_components/jquery/dist/jquery.min",
+		"domReady": "../bower_components/domready/ready.min"
 	},
 	shim: {
-		// "vendor/Picker/jquery.fs.picker": ["jquery"],
-		"vendor/domready/ready.min": ["jquery"]
 	}
 });
 
@@ -32,33 +31,19 @@ require.config({
     }
 }());
 
-// require(['jquery', 'vendor/Picker/jquery.fs.picker'], 
-(function($) {
-	"use strict";
+require(['jquery'], function($) {
+	// "use strict";
 
-	var DEMO = {
+	var theme = {
 		init: function() {
-			DEMO.focusInput();
-			DEMO.dressPickers();
-		},
-
-		focusInput: function() {
-			$('input[type="text"], input[type="tel"], input[type="email"], textarea').on('focus', function() {
-		    $(this).closest('.form-item').addClass('focus');
-		  }).on('blur', function() {
-		    $(this).closest('.form-item').removeClass('focus');
-		  });
-		},
-
-		dressPickers: function() {
-			$("input[type=radio], input[type=checkbox]").picker();
+			$('.no-js').removeClass('no-js');
 		}
 	};
 
 	// Trigger actions when DOM is ready
-	require(['vendor/domready/ready.min'], function (domReady) {
+	require(['domReady'], function (domReady) {
 	  domReady(function () {
-		$(DEMO.init);
+			$(theme.init);
 	  });
 	});
 });

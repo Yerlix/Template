@@ -30,16 +30,9 @@ module.exports = function(grunt) {
 					livereload : true
 				}
 			},
-			stylus : {
-				files : ['stylus/**/*.styl'],
-				tasks : (hasStylus) ? ['stylus:dev'] : null,
-				options: {
-					livereload : true
-				}
-			},
 			js : {
-				files : ['js/**/*.js'],
-				tasks : ['jshint'],
+				files : ['js/**/*.js', '!js/*.min.js'],
+				tasks : ['jshint', 'requirejs:dev'],
 				options : {
 					livereload : true
 				}
@@ -89,70 +82,6 @@ module.exports = function(grunt) {
 	        }
 	    }
     },
-		// Dev and production build for sass
-		// sass : {
-		// 	production : {
-		// 		files : [
-		// 			{
-		// 				src : ['**/*.scss', '!**/_*.scss'],
-		// 				cwd : 'scss',
-		// 				dest : 'css',
-		// 				ext : '.css',
-		// 				expand : true
-		// 			}
-		// 		],
-		// 		options : {
-		// 			style : 'compressed',
-		// 			sassDir: 'scss'
-		// 		}
-		// 	},
-		// 	dev : {
-		// 		files : [
-		// 			{
-		// 				src : ['**/*.scss', '!**/_*.scss'],
-		// 				cwd : 'scss',
-		// 				dest : 'css',
-		// 				ext : '.css',
-		// 				expand : true
-		// 			}
-		// 		],
-		// 		options : {
-		// 			style : 'expanded'
-		// 		}
-		// 	}
-		// },
-
-		// Dev and production build for stylus
-		stylus : {
-			production : {
-				files : [
-					{
-						src : ['**/*.styl', '!**/_*.styl'],
-						cwd : 'stylus',
-						dest : 'css',
-						ext: '.css',
-						expand : true
-					}
-				],
-				options : {
-					compress : true
-				}
-			},
-			dev : {
-				files : [
-					{
-						src : ['**/*.styl', '!**/_*.styl'],
-						cwd : 'stylus',
-						dest : 'css',
-						ext: '.css',
-						expand : true
-					}
-				],
-				options : {
-					compress : false
-				}
-			},
-		},
 
 		// Bower task sets up require config
 		bower : {
@@ -166,6 +95,15 @@ module.exports = function(grunt) {
 			production : {
 				options : {
 					name : 'global',
+					baseUrl : 'js',
+					mainConfigFile : 'js/global.js',
+					out : 'js/global.min.js'
+				}
+			},
+			dev : {
+				options : {
+					name : 'global',
+					optimize: 'none',
 					baseUrl : 'js',
 					mainConfigFile : 'js/global.js',
 					out : 'js/global.min.js'
@@ -214,10 +152,6 @@ module.exports = function(grunt) {
 			arr.push('sass:production');
 		}
 
-		if (hasStylus) {
-			arr.push('stylus:production');
-		}
-
 		arr.push('imagemin:production', 'svgmin:production', 'requirejs:production');
 
 		return arr;
@@ -229,10 +163,6 @@ module.exports = function(grunt) {
 
 		if (hasSass) {
 			arr.push['sass:dev'];
-		}
-
-		if (hasStylus) {
-			arr.push('stylus:dev');
 		}
 
 		arr.push('bower-install');
